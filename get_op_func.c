@@ -7,9 +7,7 @@
  *
  * Return: the selected function
  */
-void  (*get_op_func(stack_t *stack,
-		    unsigned int line_number))(stack_t **stack,
-					       unsigned int line_number)
+void  (*get_op_func(stack_t *stack, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
 	unsigned int i;
 	instruction_t oper[] = {
@@ -24,7 +22,7 @@ void  (*get_op_func(stack_t *stack,
 		{	return (oper[i].f);
 		}
 	}
-	fprintf(stderr, "L%d: Unknown instruction %s\n", line_number, stream.token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, stream.token);
 	free_stack(stack);
 	exit(EXIT_FAILURE);
 }
