@@ -14,6 +14,7 @@ void  (*get_op_func(stack_t *stack, unsigned int line_number))(stack_t **stack,
 	instruction_t oper[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
