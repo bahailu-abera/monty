@@ -55,6 +55,10 @@ void (*get_op_func(stack_t *stack, unsigned int line_number))(stack_t **stack,
 /** stack operation methods **/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 extern stream_t stream;
 
