@@ -21,7 +21,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
 	if (node->n == 0)
 	{
-		fprintf(stderr, "L%d: _division by zero\n", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	node->next->n = (node->next->n) % (node->n);
