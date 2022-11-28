@@ -18,7 +18,6 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	node = (*stack);
 	(*stack) = node->next;
-	printf("%d\n", node->n);
 	free(node);
 	node = NULL;
 }
