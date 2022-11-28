@@ -37,7 +37,7 @@ void parse(char *file)
 		stream.token = strtok(line, delim);
 		stream.value = strtok(NULL, delim);
 
-		if (nread == 1 || stream.token == NULL)
+		if (nread == 1 || stream.token == NULL || strcmp(stream.token, "nop") == 0)
 			continue;
 		f = get_op_func(stack, line_number);
 		(*f)(&stack, line_number);
