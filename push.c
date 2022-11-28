@@ -61,4 +61,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = new;
 	(*stack) = new;
+	if (stream.df == 1) /** it queue data structure **/
+		rotl(stack, line_number);
 }

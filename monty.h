@@ -39,13 +39,14 @@ typedef struct instruction_s
  * struct stream_s - a representation of stream at a line
  * @token: the first string before the delimeter
  * @value: the next string
- *
+ * @df: data format
  * Description: token and value of the command line
  */
 typedef struct
 {
 	char *token;
 	char *value;
+	int df;
 } stream_t;
 
 /** decode the token into opcode and call the method **/
@@ -67,6 +68,7 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void data_format(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void free_stack(stack_t *stack);
 void free_stack(stack_t *stack);

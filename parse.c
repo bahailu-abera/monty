@@ -40,6 +40,7 @@ void parse(char *file)
 
 	stream.token = NULL;
 	stream.value = NULL;
+	stream.df = 0;
 	fin = fopen(file, "r");
 	if (fin == NULL)
 	{
