@@ -16,6 +16,8 @@ void  (*get_op_func(stack_t *stack, unsigned int line_number))(stack_t **stack,
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 
