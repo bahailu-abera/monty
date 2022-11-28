@@ -1,10 +1,26 @@
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <sys/types.h>
+#include <stdbool.h>
 #include "monty.h"
 
 stream_t stream;
 
+
+/**
+ * is_comment - checks is the line is commented
+ * @line: pointer to the current line
+ *
+ * Return: true (it is comment) false (it is not comment)
+ */
+bool is_comment(char *line)
+{
+	while (isspace(*line) || *line == '\n')
+		line++;
+	if (*line == '\0' || *line == '#')
+		return (true);
+	return (false);
+}
 /**
  * parse - lexical analyzer of the source code
  * @file: the name of the source code file
@@ -34,6 +50,8 @@ void parse(char *file)
 	{
 		line_number += 1;
 
+		if (is_comment(line))
+			continue;
 		stream.token = strtok(line, delim);
 		stream.value = strtok(NULL, delim);
 
